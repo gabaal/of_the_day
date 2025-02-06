@@ -14,6 +14,10 @@ module.exports = {
         muted: "#748d92", // Light teal
         light: "#d3d9d4", // Light grey
       },
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
+        merriweather: ["var(--font-merriweather)", "serif"],
+      },
     },
   },
   plugins: [],

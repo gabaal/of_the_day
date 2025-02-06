@@ -15,17 +15,49 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
+      const storedData = localStorage.getItem("dailyData");
+      const today = new Date().toISOString().split("T")[0]; // Get current date (YYYY-MM-DD)
+
+      if (storedData) {
+        const parsedData = JSON.parse(storedData);
+
+        // If stored data is from today, use it
+        if (parsedData.date === today) {
+          setQuote(parsedData.quote);
+          setAuthor(parsedData.author);
+          setHistoricalFact(parsedData.historicalFact);
+          setHistoricalYear(parsedData.historicalYear);
+          setBirth(parsedData.birth);
+          setDeath(parsedData.death);
+          return;
+        }
+      }
+
+      // Fetch new data if no valid stored data exists
       const quoteData = await getQuoteOfTheDay();
-      setQuote(quoteData.quote);
-      setAuthor(quoteData.author);
-
       const historyData = await getHistoricalFact();
-      setHistoricalFact(historyData.event);
-      setHistoricalYear(historyData.year);
-
       const birthDeathData = await getBirthAndDeath();
-      setBirth(birthDeathData.birth);
-      setDeath(birthDeathData.death);
+
+      const newData = {
+        date: today,
+        quote: quoteData.quote,
+        author: quoteData.author,
+        historicalFact: historyData.event,
+        historicalYear: historyData.year,
+        birth: birthDeathData.birth,
+        death: birthDeathData.death,
+      };
+
+      // Store the new data in localStorage
+      localStorage.setItem("dailyData", JSON.stringify(newData));
+
+      // Update state with the new data
+      setQuote(newData.quote);
+      setAuthor(newData.author);
+      setHistoricalFact(newData.historicalFact);
+      setHistoricalYear(newData.historicalYear);
+      setBirth(newData.birth);
+      setDeath(newData.death);
     };
 
     fetchData();
@@ -34,7 +66,7 @@ export default function Home() {
   return (
     <div className="h-screen bg-primary text-light flex flex-col items-center justify-center p-6">
       {/* Main Title */}
-      <h1 className="text-5xl font-bold text-white mb-10">Of The Day</h1>
+      <h1 className="text-5xl font-bold text-white mb-10">....Of The Day</h1>
 
       {/* Content Wrapper */}
       <div className="max-w-3xl w-full bg-secondary shadow-lg rounded-lg p-10 space-y-8">
