@@ -1,5 +1,12 @@
 import { Montserrat, Merriweather } from "next/font/google";
 import "./globals.css";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import CookieConsentBanner from "../components/CookieConsentBanner"; // Import Cookie Banner
 
 // Import fonts
@@ -23,13 +30,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${montserrat.variable} ${merriweather.variable} antialiased bg-primary text-light`}
-      >
-        {children}
-        <CookieConsentBanner />
-      </body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        signIn: {
+          variables: {
+            // colorBackground: "#2e3944",
+          },
+        },
+      }}
+    >
+      <html lang="en">
+        <body
+          className={`${montserrat.variable} ${merriweather.variable} antialiased bg-primary text-light`}
+        >
+          {children}
+          <CookieConsentBanner />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

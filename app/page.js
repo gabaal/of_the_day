@@ -1,108 +1,137 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getQuoteOfTheDay } from "../lib/quote";
-import { getHistoricalFact } from "../lib/history";
-import { getBirthAndDeath } from "../lib/onthisday";
+import { getQuoteOfTheDay } from "../lib/quotes";
+import { getHistoricalEvent } from "../lib/historicalFacts";
+import { getNotableBirth, getNotableDeath } from "../lib/birthsAndDeaths";
+import { useRouter } from "next/navigation";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  const [historicalFact, setHistoricalFact] = useState("");
+  const [historicalEvent, setHistoricalEvent] = useState("");
   const [historicalYear, setHistoricalYear] = useState("");
-  const [birth, setBirth] = useState({});
-  const [death, setDeath] = useState({});
+  const [birth, setBirth] = useState("");
+  const [birthYear, setBirthYear] = useState("");
+  const [death, setDeath] = useState("");
+  const [deathYear, setDeathYear] = useState("");
+
+  const router = useRouter();
+
+  // Function to get today's date in YYYY-MM-DD format
+  const getTodayDate = () => {
+    return new Date().toISOString().split("T")[0];
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const storedData = localStorage.getItem("dailyData");
-      const today = new Date().toISOString().split("T")[0]; // Get current date (YYYY-MM-DD)
+    const storedData = localStorage.getItem("ofTheDayData");
+    const storedDate = localStorage.getItem("ofTheDayDate");
 
-      if (storedData) {
-        const parsedData = JSON.parse(storedData);
+    if (storedData && storedDate === getTodayDate()) {
+      // Use stored data if it's from today
+      const data = JSON.parse(storedData);
+      setQuote(data.quote);
+      setAuthor(data.author);
+      setHistoricalEvent(data.historicalEvent);
+      setHistoricalYear(data.historicalYear);
+      setBirth(data.birth);
+      setBirthYear(data.birthYear);
+      setDeath(data.death);
+      setDeathYear(data.deathYear);
+    } else {
+      // Fetch new data if none is stored or it's a new day
+      const fetchData = async () => {
+        const quoteData = await getQuoteOfTheDay();
+        const eventData = await getHistoricalEvent();
+        const birthData = await getNotableBirth();
+        const deathData = await getNotableDeath();
 
-        // If stored data is from today, use it
-        if (parsedData.date === today) {
-          setQuote(parsedData.quote);
-          setAuthor(parsedData.author);
-          setHistoricalFact(parsedData.historicalFact);
-          setHistoricalYear(parsedData.historicalYear);
-          setBirth(parsedData.birth);
-          setDeath(parsedData.death);
-          return;
-        }
-      }
+        const newData = {
+          quote: quoteData.quote,
+          author: quoteData.author,
+          historicalEvent: eventData.event,
+          historicalYear: eventData.year,
+          birth: birthData.name,
+          birthYear: birthData.year,
+          death: deathData.name,
+          deathYear: deathData.year,
+        };
 
-      // Fetch new data if no valid stored data exists
-      const quoteData = await getQuoteOfTheDay();
-      const historyData = await getHistoricalFact();
-      const birthDeathData = await getBirthAndDeath();
+        // Store data in local storage with today's date
+        localStorage.setItem("ofTheDayData", JSON.stringify(newData));
+        localStorage.setItem("ofTheDayDate", getTodayDate());
 
-      const newData = {
-        date: today,
-        quote: quoteData.quote,
-        author: quoteData.author,
-        historicalFact: historyData.event,
-        historicalYear: historyData.year,
-        birth: birthDeathData.birth,
-        death: birthDeathData.death,
+        // Update state
+        setQuote(newData.quote);
+        setAuthor(newData.author);
+        setHistoricalEvent(newData.historicalEvent);
+        setHistoricalYear(newData.historicalYear);
+        setBirth(newData.birth);
+        setBirthYear(newData.birthYear);
+        setDeath(newData.death);
+        setDeathYear(newData.deathYear);
       };
 
-      // Store the new data in localStorage
-      localStorage.setItem("dailyData", JSON.stringify(newData));
-
-      // Update state with the new data
-      setQuote(newData.quote);
-      setAuthor(newData.author);
-      setHistoricalFact(newData.historicalFact);
-      setHistoricalYear(newData.historicalYear);
-      setBirth(newData.birth);
-      setDeath(newData.death);
-    };
-
-    fetchData();
+      fetchData();
+    }
   }, []);
 
   return (
-    <div className="h-screen bg-primary text-light flex flex-col items-center justify-center p-6">
-      {/* Main Title */}
-      <h1 className="text-5xl font-bold text-white mb-10">....Of The Day</h1>
+    <div className="flex justify-center items-center min-h-screen bg-primary p-6">
+      <div className="bg-secondary text-light p-10 rounded-lg shadow-lg max-w-[600px] w-full space-y-12">
+        <h1 className="text-5xl font-bold text-center">Of The Day</h1>
 
-      {/* Content Wrapper */}
-      <div className="max-w-3xl w-full bg-secondary shadow-lg rounded-lg p-10 space-y-8">
-        {/* Quote Section */}
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-accent mb-4">Quote</h2>
-          <blockquote className="italic text-2xl text-white">
-            &quot;{quote}&quot;
-          </blockquote>
-          <p className="text-lg font-semibold text-light mt-2">— {author}</p>
+        <div className="space-y-12">
+          {/* Quote Section */}
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-accent">Quote</h2>
+            <blockquote
+              className="text-2xl italic text-light mt-3 cursor-pointer hover:text-muted"
+              onClick={() => router.push("/quotes")}
+            >
+              &quot;{quote}&quot;
+            </blockquote>
+            <p className="text-xl text-muted mt-2">— {author}</p>
+          </div>
+
+          {/* Historical Event Section */}
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-accent">
+              Historical Event
+            </h2>
+            <p className="text-xl text-light mt-3">
+              {historicalYear}: {historicalEvent}
+            </p>
+          </div>
+
+          {/* Birth Section */}
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-accent">Birth</h2>
+            <p className="text-xl text-light mt-3">
+              {birthYear}: {birth}
+            </p>
+          </div>
+
+          {/* Death Section */}
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-accent">Death</h2>
+            <p className="text-xl text-light mt-3">
+              {deathYear}: {death}
+            </p>
+          </div>
         </div>
 
-        {/* Historical Event Section */}
-        <div className="text-center border-t border-light pt-6">
-          <h2 className="text-3xl font-bold text-accent mb-4">
-            Historical Event
-          </h2>
-          <p className="text-xl text-white">
-            {historicalYear}: {historicalFact}
-          </p>
-        </div>
-
-        {/* Birth Section */}
-        <div className="text-center border-t border-light pt-6">
-          <h2 className="text-3xl font-bold text-accent mb-4">Notable Birth</h2>
-          <p className="text-xl text-white">
-            {birth.year}: {birth.name}
-          </p>
-        </div>
-
-        {/* Death Section */}
-        <div className="text-center border-t border-light pt-6">
-          <h2 className="text-3xl font-bold text-accent mb-4">Notable Death</h2>
-          <p className="text-xl text-white">
-            {death.year}: {death.name}
-          </p>
+        {/* SignInButton / UserButton Section */}
+        <div className="mt-8 text-center">
+          <SignedOut>
+            <SignInButton className="text-white bg-accent py-2 px-4 rounded-lg hover:bg-accent-dark">
+              Log In
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </div>
     </div>

@@ -1,5 +1,110 @@
 {
-  "node": {},
+  "node": {
+    "7f42291c06db7d152ed8761385ddaf49ee3bfe0bb8": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/sign-in/[[...sign-in]]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/sign-up/[[...sign-up]]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/_not-found/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "rsc",
+        "app/sign-in/[[...sign-in]]/page": "rsc",
+        "app/sign-up/[[...sign-up]]/page": "rsc",
+        "app/_not-found/page": "rsc"
+      }
+    },
+    "7f5bb16306a3c95fe77aa79c19314565d1f34312cb": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/sign-in/[[...sign-in]]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/sign-up/[[...sign-up]]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/_not-found/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "rsc",
+        "app/sign-in/[[...sign-in]]/page": "rsc",
+        "app/sign-up/[[...sign-up]]/page": "rsc",
+        "app/_not-found/page": "rsc"
+      }
+    },
+    "7ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/sign-in/[[...sign-in]]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/sign-up/[[...sign-up]]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        },
+        "app/_not-found/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f42291c06db7d152ed8761385ddaf49ee3bfe0bb8%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227f5bb16306a3c95fe77aa79c19314565d1f34312cb%22%2C%22deleteKeylessAction%22%5D%2C%5B%227ff905ad03fdf5feb5f1712f5e4f3faa29bbe26175%22%2C%22syncKeylessConfigAction%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "rsc",
+        "app/sign-in/[[...sign-in]]/page": "rsc",
+        "app/sign-up/[[...sign-up]]/page": "rsc",
+        "app/_not-found/page": "rsc"
+      }
+    },
+    "7ffa9ae9446aad69b3b53ef5a8ded958e13c372091": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227ffa9ae9446aad69b3b53ef5a8ded958e13c372091%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/sign-in/[[...sign-in]]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227ffa9ae9446aad69b3b53ef5a8ded958e13c372091%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/sign-up/[[...sign-up]]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227ffa9ae9446aad69b3b53ef5a8ded958e13c372091%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        },
+        "app/_not-found/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fgerald%2FProjects%2Flatest%2Fof_the_day%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227ffa9ae9446aad69b3b53ef5a8ded958e13c372091%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/sign-in/[[...sign-in]]/page": "action-browser",
+        "app/sign-up/[[...sign-up]]/page": "action-browser",
+        "app/_not-found/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
   "encryptionKey": "oqFv8NdrXhDRuVkgQxVFxWeyYKbDXFbx3nxMO/XtgdU="
 }
