@@ -8,7 +8,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import CookieConsentBanner from "../components/CookieConsentBanner"; // Import Cookie Banner
-
+import Provider from "../provider";
 // Import fonts
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -43,7 +43,8 @@ export default function RootLayout({ children }) {
         <body
           className={`${montserrat.variable} ${merriweather.variable} antialiased bg-primary text-light`}
         >
-          {children}
+          <Provider> {children}</Provider>
+
           <CookieConsentBanner />
         </body>
       </html>

@@ -36,6 +36,12 @@ export default function QuotesPage() {
         ) : (
           <Skeleton height="h-8" />
         )}
+        <button
+          onClick={() => router.push("/")}
+          className="block mx-auto mt-6 px-6 py-2 bg-accent text-light rounded hover:bg-muted transition"
+        >
+          Back to Main Page
+        </button>
       </div>
     </div>
   );
